@@ -51,7 +51,7 @@ local function automodadd(msg)
    end
 end
 
-local function modadd(msg)
+local function add(msg)
     if not is_admin(msg) then
         return "You Are Not Global Admin"
     end
@@ -215,8 +215,8 @@ function run(msg, matches)
   end
   local mod_cmd = matches[1]
   local receiver = get_receiver(msg)
-  if matches[1] == 'modadd' then
-    return modadd(msg)
+  if matches[1] == 'add' then
+    return add(msg)
   end
   if matches[1] == 'modrem' then
     return modrem(msg)
@@ -278,7 +278,7 @@ return {
           "!modlist : Moderators List",
           },
       admin = {
-          "!modadd : Add Moderator List",
+          "!add : Add Moderator List",
           "!modrem : Remove Moderator List",
           },
       sudo = {
@@ -291,7 +291,7 @@ return {
     "^!(modset) (.*)$",
     "^!(moddem) (.*)$",
     "^!(modlist)$",
-    "^!(modadd)$",
+    "^!(add)$",
     "^!(modrem)$",
     "^!(adminset) (.*)$",
     "^!(admindem) (.*)$",
